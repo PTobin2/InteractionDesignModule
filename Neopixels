@@ -1,0 +1,137 @@
+from adafruit_circuitplayground import cp
+
+import time
+
+
+green = [0, 255, 0]
+red = [255, 0, 0]
+random = [255, 255, 0]
+
+start = time.time()
+
+one = start + 2
+
+two = one + 2
+
+three = two + 2
+
+four = three + 2
+
+five = four + 2
+
+six = five + 2
+
+seven = six + 2
+
+eight = seven + 2
+
+nine = eight + 2
+
+ten = nine + 2
+
+ten2 = nine + 3
+
+
+
+count = 0
+
+pixels_off_state = [0, 0, 0]
+cp.pixels.brightness = 0.1
+
+
+cp.pixels.auto_write = False
+pixel_amount = len(cp.pixels)
+
+print(time.time())
+
+while time.time() <= ten2:
+    if time.time() <= one:
+        for pixel in range(pixel_amount):
+            if pixel <= 0:
+                cp.pixels[pixel] = red
+
+    if time.time() >= one:
+        if time.time() <= two:
+            for pixel in range(pixel_amount):
+                if pixel <= 1:
+                    cp.pixels[pixel] = red
+
+
+    if time.time() >= two:
+        if time.time() <= three:
+            for pixel in range(pixel_amount):
+                if pixel <= 2:
+                    cp.pixels[pixel] = red
+
+
+
+    if time.time() >= three:
+        if time.time() <= four:
+            for pixel in range(pixel_amount):
+                if pixel <= 3:
+                    cp.pixels[pixel] = red
+
+    if time.time() >= four:
+        if time.time() <= five:
+            for pixel in range(pixel_amount):
+                if pixel <= 4:
+                    cp.pixels[pixel] = red
+
+
+    if time.time() >= five:
+        if time.time() <= six:
+            for pixel in range(pixel_amount):
+                if pixel <= 5:
+                    cp.pixels[pixel] = red
+
+
+    if time.time() >= six:
+        if time.time() <= seven:
+            for pixel in range(pixel_amount):
+                if pixel <= 6:
+                    cp.pixels[pixel] = red
+
+    if time.time() >= seven:
+        if time.time() <= eight:
+            for pixel in range(pixel_amount):
+                if pixel <= 7:
+                    cp.pixels[pixel] = red
+
+    if time.time() >= eight:
+        if time.time() <= nine:
+            for pixel in range(pixel_amount):
+                if pixel <= 8:
+                    cp.pixels[pixel] = red
+
+
+    if time.time() >= nine:
+        if time.time() <= ten:
+            for pixel in range(pixel_amount):
+                if pixel <= 9:
+                    cp.pixels[pixel] = green
+
+
+
+    if time.time() > ten:
+        for pixel in range(pixel_amount):
+            if pixel <= 9:
+                cp.pixels[pixel] = pixels_off_state
+        ten2 = ten2 + 22
+        start = time.time()
+        one = start + 2
+        two = one + 2
+        three = two + 2
+        four = three + 2
+        five = four + 2
+        six = five + 2
+        seven = six + 2
+        eight = seven + 2
+        nine = eight + 2
+        ten = nine + 2
+
+
+
+    cp.pixels.show()
+    time.sleep(0.5)
+
+
